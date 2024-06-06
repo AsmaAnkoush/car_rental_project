@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeFragment">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rental Statistics"
+        android:textColor="#4B0082"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
+
+    <!-- Labels -->
+    <LinearLayout
+        android:id="@+id/statisticsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/textViewTitle"
+        android:layout_marginTop="20dp"
+        android:padding="10dp">
+
+        <!-- Top Customers -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Top Customers:"
+                android:textColor="#4B0082"
+                android:textSize="18sp"/>
+
+            <EditText
+                android:id="@+id/editTextTopCustomers"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="0"
+                android:textColor="#4B0082"
+                android:inputType="none"
+                android:layout_marginStart="10dp"/>
+        </LinearLayout>
+
+        <!-- Users in System -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Users in System:"
+                android:textColor="#4B0082"
+                android:textSize="18sp"/>
+
+            <EditText
+                android:id="@+id/editTextUsersInSystem"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#4B0082"
+                android:hint="0"
+                android:inputType="none"
+                android:layout_marginStart="10dp"/>
+        </LinearLayout>
+
+        <!-- Revenue -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Revenue:"
+                android:textColor="#4B0082"
+                android:textSize="18sp"/>
+
+            <EditText
+                android:id="@+id/editTextRevenue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="#4B0082"
+                android:layout_weight="1"
+                android:hint="$0"
+                android:inputType="none"
+                android:layout_marginStart="10dp"/>
+        </LinearLayout>
+
+        <!-- Number of Rented Cars -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Number of Rented Cars:"
+                android:textColor="#4B0082"
+                android:textSize="18sp"/>
+
+            <EditText
+                android:id="@+id/editTextRentedCars"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#4B0082"
+                android:hint="0"
+                android:inputType="none"
+                android:layout_marginStart="10dp"/>
+        </LinearLayout>
+
+        <!-- Number of Available Cars -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Number of Available Cars:"
+                android:textColor="#4B0082"
+                android:textSize="18sp"/>
+
+            <EditText
+                android:id="@+id/editTextAvailableCars"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#4B0082"
+                android:hint="0"
+                android:inputType="none"
+                android:layout_marginStart="10dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Image -->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="262dp"
+        android:layout_height="238dp"
+        android:layout_below="@id/statisticsLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/car" />
+
+</RelativeLayout>

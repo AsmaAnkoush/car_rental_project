@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ManageFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add New Car to System"
+            android:textColor="#4B0082"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Type of New Car -->
+        <TextView
+            android:id="@+id/textType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Type of New Car:"
+            android:textColor="@android:color/black"
+            android:layout_below="@id/title"
+            android:layout_marginTop="16dp"/>
+
+        <EditText
+            android:id="@+id/editType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Type of New Car"
+            android:layout_below="@id/textType"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Model Year -->
+        <TextView
+            android:id="@+id/textModelYear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Model Year:"
+            android:textColor="@android:color/black"
+            android:layout_below="@id/editType"
+            android:layout_marginTop="16dp"/>
+
+        <EditText
+            android:id="@+id/editModelYear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Model Year"
+            android:layout_below="@id/textModelYear"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Color -->
+        <TextView
+            android:id="@+id/textColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Color:"
+            android:textColor="@android:color/black"
+            android:layout_below="@id/editModelYear"
+            android:layout_marginTop="16dp"/>
+
+        <EditText
+            android:id="@+id/editColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Color"
+            android:layout_below="@id/textColor"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Type of Benz -->
+        <TextView
+            android:id="@+id/textBenz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Type of Benz:"
+            android:textColor="@android:color/black"
+            android:layout_below="@id/editColor"
+            android:layout_marginTop="16dp"/>
+
+        <Spinner
+            android:id="@+id/spinnerBenz"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textBenz"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Car Number -->
+        <TextView
+            android:id="@+id/textCarNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Car Number:"
+            android:textColor="@android:color/black"
+            android:layout_below="@id/spinnerBenz"
+            android:layout_marginTop="16dp"/>
+
+        <EditText
+            android:id="@+id/editCarNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Car Number"
+            android:layout_below="@id/textCarNumber"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Number of Passengers -->
+        <TextView
+            android:id="@+id/textPassengers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Number of Passengers:"
+            android:textColor="@android:color/black"
+            android:layout_below="@id/editCarNumber"
+            android:layout_marginTop="16dp"/>
+
+        <EditText
+            android:id="@+id/editPassengers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Number of Passengers"
+            android:layout_below="@id/textPassengers"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Rental Price per Day -->
+        <TextView
+            android:id="@+id/textRentalPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rental Price per Day:"
+            android:textColor="@android:color/black"
+            android:layout_below="@id/editPassengers"
+            android:layout_marginTop="16dp"/>
+
+        <EditText
+            android:id="@+id/editRentalPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Rental Price per Day"
+            android:layout_below="@id/textRentalPrice"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Make Company -->
+        <TextView
+            android:id="@+id/textMakeCompany"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Make Company:"
+            android:textColor="@android:color/black"
+            android:layout_below="@id/editRentalPrice"
+            android:layout_marginTop="16dp"/>
+
+        <EditText
+            android:id="@+id/editMakeCompany"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Make Company"
+            android:layout_below="@id/textMakeCompany"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Status -->
+        <TextView
+            android:id="@+id/textStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Status:"
+            android:textColor="@android:color/black"
+            android:layout_below="@id/editMakeCompany"
+            android:layout_marginTop="16dp"/>
+
+        <Spinner
+            android:id="@+id/spinnerStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textStatus"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Description -->
+        <TextView
+            android:id="@+id/textDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description:"
+            android:textColor="@android:color/black"
+            android:layout_below="@id/spinnerStatus"
+            android:layout_marginTop="16dp"/>
+
+        <EditText
+            android:id="@+id/editDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Description"
+            android:layout_below="@id/textDescription"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Image -->
+        <TextView
+            android:id="@+id/textImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Image:"
+            android:textColor="@android:color/black"
+            android:layout_below="@id/editDescription"
+            android:layout_marginTop="16dp"/>
+
+        <Button
+            android:id="@+id/buttonSelectImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Image"
+            android:layout_below="@id/textImage"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Placeholder for the selected image -->
+        <ImageView
+            android:id="@+id/imageViewSelected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/buttonSelectImage"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"/>
+
+        <!-- Buttons for Save and Cancel -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/imageViewSelected"
+            android:layout_marginTop="16dp">
+
+            <Button
+                android:id="@+id/buttonSave"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Save"
+                android:layout_marginEnd="8dp"
+                android:textColor="@android:color/white"
+                />
+
+            <Button
+                android:id="@+id/buttonCancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Cancel"
+                android:textColor="@android:color/white"
+                />
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>
