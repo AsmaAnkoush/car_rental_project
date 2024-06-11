@@ -33,6 +33,17 @@
                 android:id="@+id/CarimageView"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Model :"
+                style="@style/TextStyle.Label"/>
+
+            <TextView
+                android:id="@+id/txtModel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/TextStyle.data"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -73,7 +84,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Type of Benz:"
+                android:text="using type:"
+                style="@style/TextStyle.Label"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" :"
+                android:id="@+id/usingType"
                 style="@style/TextStyle.Label"/>
 
             <TextView
@@ -128,6 +145,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Status:"
+                style="@style/TextStyle.Label"/>
+            <TextView
+                android:id="@+id/txtStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
                 style="@style/TextStyle.Label"/>
 
             <TextView

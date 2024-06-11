@@ -1,248 +1,259 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ViewDataCar"
-    android:orientation="vertical"
-    android:backgroundTint="@color/Bblue">
-
-    <ScrollView
+    tools:context=".ManageFragment">
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:backgroundTint="@color/Bblue">
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:orientation="vertical">
+        <TextView android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update Car to System"
+            android:textColor="#4B0082"
+            android:textStyle="bold"
+            style="@style/TextStyle.Title"
+            android:textSize="20sp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="16dp"/>
 
-        <LinearLayout
+        <ImageView
+            android:id="@+id/upCarimageView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"/>
+        <!--  Type of New Car  -->
+
+        <TextView
+            android:id="@+id/uptextModel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Model :"
+            style="@style/TextStyle.Label"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="16dp"/>
+
+        <!--  Model Year  -->
+
+        <EditText
+            android:id="@+id/upeditModel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_margin="10dp"
-            android:backgroundTint="@color/Bblue">
+            android:layout_below="@id/textModel"
+            android:layout_marginTop="6dp"
+            android:hint="Enter Model : " />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Update Car"
-                style="@style/TextTitle"/>
+        <TextView
+            android:id="@+id/uptextModelYear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editType"
+            style="@style/TextStyle.Label"
+            android:text="Model Year:"
+            android:textColor="@android:color/black" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Type :"
-                style="@style/TextStyle.Label"/>
+        <EditText
+            android:id="@+id/editModelYear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Model Year"
 
-            <EditText
-                android:id="@+id/uptxtType"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:hint="Enter Type"
-                android:inputType="text"
-                android:minHeight="48dp" />
+            android:layout_below="@id/textModelYear"
+            android:layout_marginTop="8dp"/>
+        <!--  Color  -->
+        <TextView
+            android:id="@+id/uptextColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Color:"
+            style="@style/TextStyle.Label"
+            android:textColor="@android:color/black"
+            android:layout_below="@id/editModelYear"
+            android:layout_marginTop="16dp"/>
+        <EditText
+            android:id="@+id/upeditColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Color"
+            android:layout_below="@id/textColor"
+            android:layout_marginTop="8dp"/>
+        <TextView
+            android:id="@+id/uptextType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="using Type of New Car:"
+            style="@style/TextStyle.Label"
+            android:layout_below="@id/title"
+            android:layout_marginTop="16dp"/>
+        <EditText
+            android:id="@+id/upeditType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter usong Type of New Car"
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Model Year:"
-                style="@style/TextStyle.Label"/>
+            android:layout_marginTop="8dp"/>
+        <!--  Type of Benz  -->
+        <TextView
+            android:id="@+id/uptextBenz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Type of Benz:"
 
-            <EditText
-                android:id="@+id/uptxtModelYear"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:hint="Enter model Year"
-                android:inputType="number"
-                android:minHeight="48dp" />
+            style="@style/TextStyle.Label"
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Color :"
-                style="@style/TextStyle.Label"/>
+            android:layout_marginTop="16dp"/>
+        <Spinner
+            android:id="@+id/upspinnerBenz"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
 
-            <EditText
-                android:id="@+id/uptxtColor"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:hint="Enter color"
-                android:inputType="text"
-                android:minHeight="48dp" />
+            android:layout_marginTop="8dp"/>
+        <!--  Car Number  -->
+        <TextView android:id="@+id/uptextCarNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Car Number:"
+            style="@style/TextStyle.Label"
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Type of Benz:"
-                style="@style/TextStyle.Label"/>
+            android:layout_marginTop="16dp"/>
+        <EditText android:id="@+id/upeditCarNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Car Number"
+            android:layout_marginTop="8dp"/>
+        <!--  Number of Passengers  -->
+        <TextView
+            android:id="@+id/uptextPassengers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Number of Passengers:"
+            android:layout_below="@id/editCarNumber"
+            style="@style/TextStyle.Label"
+            android:layout_marginTop="16dp"/>
+        <EditText android:id="@+id/upeditPassengers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Number of Passengers"
+            android:layout_below="@id/textPassengers"
+            android:layout_marginTop="8dp"/>
+        <!--  Rental Price per Day  -->
+        <TextView
+            android:id="@+id/uptextRentalPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rental Price per Day:"
+            android:layout_below="@id/editPassengers"
+            android:layout_marginTop="16dp"/>
+        <EditText
+            android:id="@+id/upeditRentalPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Rental Price per Day"
+            android:layout_below="@id/textRentalPrice"
+            android:layout_marginTop="8dp"/>
+        <!--  Make Company  -->
+        <TextView
+            android:id="@+id/uptextMakeCompany"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Make Company:"
+            android:textColor="@android:color/black"
+            android:layout_below="@id/editRentalPrice"
+            android:layout_marginTop="16dp"/>
+        <EditText
+            android:id="@+id/upeditMakeCompany"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Make Company"
+            android:layout_below="@id/textMakeCompany"
+            android:layout_marginTop="8dp"/>
+        <!--  Status  -->
+        <TextView
+            android:id="@+id/uptextStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Status:"
+            style="@style/TextStyle.Label"
+            android:layout_below="@id/editMakeCompany"
+            android:layout_marginTop="16dp"/>
+        <Spinner
+            android:id="@+id/upspinnerStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textStatus"
+            android:layout_marginTop="8dp"/>
+        <!--  Description  -->
+        <TextView
+            android:id="@+id/uptextDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description:"
+            android:layout_below="@id/spinnerStatus"
+            android:layout_marginTop="16dp"/>
+        <EditText
+            android:id="@+id/upeditDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Description"
+            android:layout_below="@id/textDescription"
+            android:layout_marginTop="8dp"/>
+        <!--  Image  -->
+        <TextView
+            android:id="@+id/uptextImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Image:"
+            style="@style/TextStyle.Label"
+            android:layout_below="@id/editDescription"
+            android:layout_marginTop="16dp"/>
+        <Button
+            android:id="@+id/upbuttonSelectImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Image"
+            android:layout_below="@id/textImage"
+            android:layout_marginTop="8dp"/>
+        <EditText
+            android:id="@+id/uptext_Image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Image:"
+            style="@style/TextStyle.Label"
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Car Number:"
-                android:layout_marginTop="16dp"
-                android:layout_marginStart="16dp"/>
+            android:layout_marginTop="16dp"/>
+        <!--  Placeholder for the selected image  -->
+        <ImageView
+            android:id="@+id/upimageViewSelected"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_below="@id/buttonSelectImage"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"/>
+        <!--  Buttons for Save and Cancel  -->
 
-            <EditText
-                android:id="@+id/uptxtCarNumber"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:hint="Enter Car Number"
-                android:inputType="text"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Number of Passengers:"
-                style="@style/TextStyle.Label"/>
-
-            <EditText
-                android:id="@+id/uptxtNumberOfPassengers"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:hint="Enter Number of Passengers"
-                android:inputType="number"
-                android:minHeight="48dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Rental Price per Day:"
-                style="@style/TextStyle.Label"/>
-
-            <EditText
-                android:id="@+id/uptxtRentalPricePerDay"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:hint="Enter Rental Price per Day"
-                android:inputType="numberDecimal"
-                android:minHeight="48dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Make Company :"
-                style="@style/TextStyle.Label"/>
-
-            <EditText
-                android:id="@+id/uptxtMakeCompany"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:hint="Enter Make Company"
-                android:inputType="text"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Status:"
-                style="@style/TextStyle.Label"/>
-
-            <EditText
-                android:id="@+id/uptxtStatus"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:hint="Enter Status"
-                android:inputType="text"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Description:"
-                style="@style/TextStyle.Label"/>
-
-            <EditText
-                android:id="@+id/uptxtDescription"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:hint="Enter Description"
-                android:inputType="text"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Transmission Type:"
-                style="@style/TextStyle.Label"/>
-
-            <EditText
-                android:id="@+id/uptxtTransmissionType"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:hint="Enter Transmission Type"
-                android:inputType="text"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Using Type:"
-                style="@style/TextStyle.Label"/>
-
-            <EditText
-                android:id="@+id/uptxtUsingType"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:hint="Enter Using Type"
-                android:inputType="text"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Image:"
-                style="@style/TextStyle.Label"/>
-
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_below="@id/imageViewSelected" android:layout_marginTop="16dp">
             <Button
-                android:id="@+id/upSelectImage"
+                android:id="@+id/upbuttonSave"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="24dp"
-                android:text="Select Image"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:text="Save"
+                android:layout_marginEnd="8dp"
+                android:textColor="@android:color/white"
+                android:layout_marginBottom="50dp"/>
+            <Button
+                android:id="@+id/upbuttonCancel"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/upbuttonCancl"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="24dp"
-                    android:text="Cancel"
-                    android:layout_marginRight="10dp"/>
-
-                <Button
-                    android:id="@+id/upbuttonSave"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="24dp"
-                    android:text="Save"
-                    android:layout_marginLeft="10dp"/>
-            </LinearLayout>
+                android:layout_weight="1"
+                android:text="Cancel"
+                android:textColor="@android:color/white"
+                android:layout_marginBottom="50dp"/>
 
         </LinearLayout>
-    </ScrollView>
-</LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

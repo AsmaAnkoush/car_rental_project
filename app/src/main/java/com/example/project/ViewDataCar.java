@@ -28,21 +28,13 @@ import com.android.volley.toolbox.Volley;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.google.android.material.shape.MaterialShapeDrawable;
-import com.google.android.material.shape.ShapeAppearanceModel;
-import androidx.core.view.WindowInsetsCompat;
-import androidx.core.view.ViewCompat;
-import androidx.recyclerview.widget.RecyclerView;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-
-
 
 public class ViewDataCar extends AppCompatActivity {
 
     private ImageView imageView;
-    private TextView txtTypeTrans, txtModelYear, txtColor, txtCarNumber, txtNumberOfPassengers,
+    private TextView txtModel, txtStatus, txtTypeTrans, txtModelYear, txtColor, txtCarNumber, txtNumberOfPassengers,
             txtRentalPricePerDay, txtMakeCompany, txtDescription;
     private RequestQueue requestQueue;
 
@@ -51,7 +43,10 @@ public class ViewDataCar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_data_car);
 
+
         // Initialize views
+        txtModel = findViewById(R.id.txtModel);
+        txtStatus = findViewById(R.id.txtStatus);
         txtTypeTrans = findViewById(R.id.txtTypeTrans);
         txtModelYear = findViewById(R.id.txtModelYear);
         txtColor = findViewById(R.id.txtColor);
@@ -61,17 +56,28 @@ public class ViewDataCar extends AppCompatActivity {
         txtMakeCompany = findViewById(R.id.txtMakeCompany);
         txtDescription = findViewById(R.id.txtDescription);
         imageView=findViewById(R.id.CarimageView);
+        if (savedInstanceState != null) {
+            carId = savedInstanceState.getInt("carId"); // Restore relevant data
 
+        }
 
+        Intent intent = getIntent();
+        if (intent != null && intent.hasExtra("id")) {
+            carId = intent.getIntExtra("id", 0); // 0 is the default value if "id" is not found
+        }
         // Fetch car data
         fetchCarData();
     }
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putInt("carId", carId); // Save relevant data
+        super.onSaveInstanceState(outState);
+    }
+    int carId=0;
     private void fetchCarData() {
         // Get the car ID from the intent
-        Intent intent = getIntent();
-        if (intent != null && intent.hasExtra("id")) {
-            int carId = intent.getIntExtra("id", 0); // 0 is the default value if "id" is not found
+
 
             // Construct URL for fetching car data
             String url = "http://10.0.2.2/carrentalphp/get_car.php?carId=" + carId;
@@ -94,28 +100,21 @@ public class ViewDataCar extends AppCompatActivity {
                                     JSONObject carData = jsonResponse.getJSONObject("data");
 
                                     // Populate TextViews with car data
-                                    txtTypeTrans.setText(carData.getString("usingType"));
-                                    txtModelYear.setText(carData.getString("year"));
+                                    txtModel.setText(carData.getString("model"));
+                                    txtStatus.setText(carData.getString("availability_status"));
+                                    txtTypeTrans.setText(carData.getString("transmissionTypes"));
+                                    txtModelYear.setText(String.valueOf(carData.getInt("year")));
                                     txtColor.setText(carData.getString("color"));
-                                    txtCarNumber.setText(carData.getString("car_Number"));
-                                    txtNumberOfPassengers.setText(carData.getString("numberOfPassengers"));
-                                    txtRentalPricePerDay.setText(carData.getString("rental_price_per_day"));
+                                    txtCarNumber.setText(String.valueOf(carData.getInt("car_Number")));
+                                    txtNumberOfPassengers.setText(String.valueOf(carData.getInt("numOfPassengers")));
+                                    txtRentalPricePerDay.setText(String.valueOf(carData.getDouble("rental_price_per_day")));
                                     txtMakeCompany.setText(carData.getString("make"));
                                     txtDescription.setText(carData.getString("description"));
 
-//                                    String imageUrl = carData.getString("image_url");
-
+                                    // Load image using Glide
                                     Glide.with(ViewDataCar.this)
-                                            .load(carData.getString("image_url")) // Assuming getImageUrl() returns the URL of the image
-                                            .diskCacheStrategy(DiskCacheStrategy.ALL) // Cache both original & resized image
+                                            .load(carData.getString("image_url"))
                                             .into(imageView);
-
-//                                    Glide.with(ViewDataCar.this)
-//                                            .load(imageUrl) // Assuming getImageUrl() returns the URL of the image
-//                                            .diskCacheStrategy(DiskCacheStrategy.ALL) // Cache both original & resized image
-//                                            .into(imageView);
-
-
                                 } else {
                                     // Display error message if there's an error fetching car data
                                     String message = jsonResponse.getString("msg");
@@ -138,31 +137,6 @@ public class ViewDataCar extends AppCompatActivity {
 
             // Add the request to the request queue
             requestQueue.add(stringRequest);
-        }
+
     }
 }
-
-//
-//public class ViewDataCar extends AppCompatActivity {
-//
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        EdgeToEdge.enable(this);
-//        setContentView(R.layout.activity_view_data_car);
-//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-//            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-//            return insets;
-//        });
-//
-//        TextView txtType = findViewById(R.id.txtTypeTrans);
-//        Intent intent = getIntent();
-//        if (intent != null && intent.hasExtra("id")) {
-//            int id = intent.getIntExtra("id", 0); // 0 is the default value if "id" is not found
-//            txtType.setText(String.valueOf(id));
-//        }
-//
-//    }
-//}
-

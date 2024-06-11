@@ -10,8 +10,8 @@
         <!-- Add more items as needed -->
     </string-array>
 
-    <string-array name="car_benz_types">
-        <item>SUV</item>
+    <string-array name="car_tran_types">
+
         <item>Automatic</item>
         <item>Manual</item>
     </string-array>
