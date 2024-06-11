@@ -7,22 +7,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ViewDataCar"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:backgroundTint="@color/Bblue">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:backgroundTint="@color/Bblue">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_margin="10dp">
+            android:layout_margin="10dp"
+            android:backgroundTint="@color/Bblue">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Update Car "
+                android:text="Update Car"
                 style="@style/TextTitle"/>
 
             <TextView
@@ -38,8 +41,9 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:hint="Enter Type"
-                android:inputType="text"/>
-            <!-- Car Model -->
+                android:inputType="text"
+                android:minHeight="48dp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -53,14 +57,15 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:hint="Enter model Year"
-                android:inputType="text"/>
+                android:inputType="number"
+                android:minHeight="48dp" />
 
-            <!-- Car Year -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Color :"
                 style="@style/TextStyle.Label"/>
+
             <EditText
                 android:id="@+id/uptxtColor"
                 android:layout_width="match_parent"
@@ -68,20 +73,22 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:hint="Enter color"
-                android:inputType="number"/>
+                android:inputType="text"
+                android:minHeight="48dp" />
 
-            <!-- Car Color -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Type of Benz:"
                 style="@style/TextStyle.Label"/>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Car Number:"
                 android:layout_marginTop="16dp"
                 android:layout_marginStart="16dp"/>
+
             <EditText
                 android:id="@+id/uptxtCarNumber"
                 android:layout_width="match_parent"
@@ -92,7 +99,6 @@
                 android:inputType="text"/>
 
             <TextView
-
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Number of Passengers:"
@@ -105,9 +111,9 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:hint="Enter Number of Passengers"
-                android:inputType="text"/>
+                android:inputType="number"
+                android:minHeight="48dp" />
 
-            <!-- Car Model -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -121,14 +127,15 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:hint="Enter Rental Price per Day"
-                android:inputType="text"/>
+                android:inputType="numberDecimal"
+                android:minHeight="48dp" />
 
-            <!-- Car Year -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Make Company :"
                 style="@style/TextStyle.Label"/>
+
             <EditText
                 android:id="@+id/uptxtMakeCompany"
                 android:layout_width="match_parent"
@@ -136,14 +143,23 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:hint="Enter Make Company"
-                android:inputType="number"/>
+                android:inputType="text"/>
 
-            <!-- Car Color -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Status:"
                 style="@style/TextStyle.Label"/>
+
+            <EditText
+                android:id="@+id/uptxtStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:hint="Enter Status"
+                android:inputType="text"/>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -158,11 +174,43 @@
                 android:layout_marginEnd="16dp"
                 android:hint="Enter Description"
                 android:inputType="text"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Transmission Type:"
+                style="@style/TextStyle.Label"/>
+
+            <EditText
+                android:id="@+id/uptxtTransmissionType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:hint="Enter Transmission Type"
+                android:inputType="text"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Using Type:"
+                style="@style/TextStyle.Label"/>
+
+            <EditText
+                android:id="@+id/uptxtUsingType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:hint="Enter Using Type"
+                android:inputType="text"/>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Image:"
                 style="@style/TextStyle.Label"/>
+
             <Button
                 android:id="@+id/upSelectImage"
                 android:layout_width="wrap_content"
@@ -176,7 +224,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-
                 <Button
                     android:id="@+id/upbuttonCancl"
                     android:layout_width="wrap_content"
@@ -185,6 +232,7 @@
                     android:layout_marginTop="24dp"
                     android:text="Cancel"
                     android:layout_marginRight="10dp"/>
+
                 <Button
                     android:id="@+id/upbuttonSave"
                     android:layout_width="wrap_content"
@@ -194,7 +242,6 @@
                     android:text="Save"
                     android:layout_marginLeft="10dp"/>
             </LinearLayout>
-
 
         </LinearLayout>
     </ScrollView>

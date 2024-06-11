@@ -12,6 +12,7 @@ import com.example.project.Car;
 import com.example.project.R;
 
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -87,5 +88,6 @@ public class CarCardViewActivity extends AppCompatActivity {
         // Notify the adapter about the changes in the data set
         caradapter.notifyDataSetChanged();
     }
+
 
 }

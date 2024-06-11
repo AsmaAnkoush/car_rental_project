@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeFragment">
+    tools:context=".StatFragment">
 
-    <!-- Title -->
     <TextView
         android:id="@+id/textViewTitle"
         android:layout_width="wrap_content"
@@ -18,155 +17,130 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"/>
 
-    <!-- Labels -->
-    <LinearLayout
-        android:id="@+id/statisticsLayout"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/textViewStartDateLabel"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:text="Start Date:"
+        android:textColor="#000000"
+        android:textSize="18dp"
         android:layout_below="@id/textViewTitle"
         android:layout_marginTop="20dp"
-        android:padding="10dp">
+        android:layout_marginStart="20dp"
+        android:layout_alignParentStart="true"/>
 
-        <!-- Top Customers -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical">
+    <DatePicker
+        android:id="@+id/datePickerStartDate"
+        android:layout_width="268dp"
+        android:layout_height="74dp"
+        android:layout_below="@id/textViewStartDateLabel"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="20dp"
+        android:calendarViewShown="false"
+        android:datePickerMode="spinner" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Top Customers:"
-                android:textColor="#4B0082"
-                android:textSize="18sp"/>
+    <TextView
+        android:id="@+id/textViewEndDateLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="End Date:"
+        android:textColor="#000000"
+        android:textSize="18dp"
+        android:layout_below="@id/datePickerStartDate"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_alignParentStart="true"/>
 
-            <EditText
-                android:id="@+id/editTextTopCustomers"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="0"
-                android:textColor="#4B0082"
-                android:inputType="none"
-                android:layout_marginStart="10dp"/>
-        </LinearLayout>
+    <DatePicker
+        android:id="@+id/datePickerEndDate"
+        android:layout_width="262dp"
+        android:layout_height="76dp"
+        android:layout_below="@id/textViewEndDateLabel"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="20dp"
+        android:calendarViewShown="false"
+        android:datePickerMode="spinner" />
 
-        <!-- Users in System -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_marginTop="10dp">
+    <Button
+        android:id="@+id/buttonCompute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Compute"
+        android:layout_below="@id/datePickerEndDate"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_alignParentStart="true"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Users in System:"
-                android:textColor="#4B0082"
-                android:textSize="18sp"/>
+    <TextView
+        android:id="@+id/textViewBookedCarsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Number of Booked Cars:"
+        android:textColor="#000000"
+        android:textSize="18dp"
+        android:layout_below="@id/buttonCompute"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_alignParentStart="true"/>
 
-            <EditText
-                android:id="@+id/editTextUsersInSystem"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textColor="#4B0082"
-                android:hint="0"
-                android:inputType="none"
-                android:layout_marginStart="10dp"/>
-        </LinearLayout>
+    <EditText
+        android:id="@+id/editTextBookedCars"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="0"
+        android:layout_toEndOf="@id/textViewBookedCarsLabel"
+        android:layout_alignTop="@id/textViewBookedCarsLabel"
+        android:layout_marginStart="10dp"/>
 
-        <!-- Revenue -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_marginTop="10dp">
+    <TextView
+        android:id="@+id/textViewAvailableCarsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Number of Available Cars:"
+        android:textColor="#000000"
+        android:textSize="18dp"
+        android:layout_below="@id/editTextBookedCars"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_alignParentStart="true"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Revenue:"
-                android:textColor="#4B0082"
-                android:textSize="18sp"/>
+    <EditText
+        android:id="@+id/editTextAvailableCars"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="0"
+        android:layout_toEndOf="@id/textViewAvailableCarsLabel"
+        android:layout_alignTop="@id/textViewAvailableCarsLabel"
+        android:layout_marginStart="10dp"/>
 
-            <EditText
-                android:id="@+id/editTextRevenue"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:textColor="#4B0082"
-                android:layout_weight="1"
-                android:hint="$0"
-                android:inputType="none"
-                android:layout_marginStart="10dp"/>
-        </LinearLayout>
+    <TextView
+        android:id="@+id/textViewTotalPaymentLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Payment:"
+        android:textColor="#000000"
+        android:textSize="18dp"
+        android:layout_below="@id/editTextAvailableCars"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_alignParentStart="true"/>
 
-        <!-- Number of Rented Cars -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_marginTop="10dp">
+    <EditText
+        android:id="@+id/editTextTotalPayment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="0"
+        android:layout_toEndOf="@id/textViewTotalPaymentLabel"
+        android:layout_alignTop="@id/textViewTotalPaymentLabel"
+        android:layout_marginStart="10dp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Number of Rented Cars:"
-                android:textColor="#4B0082"
-                android:textSize="18sp"/>
-
-            <EditText
-                android:id="@+id/editTextRentedCars"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textColor="#4B0082"
-                android:hint="0"
-                android:inputType="none"
-                android:layout_marginStart="10dp"/>
-        </LinearLayout>
-
-        <!-- Number of Available Cars -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_marginTop="10dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Number of Available Cars:"
-                android:textColor="#4B0082"
-                android:textSize="18sp"/>
-
-            <EditText
-                android:id="@+id/editTextAvailableCars"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textColor="#4B0082"
-                android:hint="0"
-                android:inputType="none"
-                android:layout_marginStart="10dp"/>
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <!-- Image -->
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="262dp"
-        android:layout_height="238dp"
-        android:layout_below="@id/statisticsLayout"
-        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/car"
+        android:layout_below="@id/editTextTotalPayment"
         android:layout_marginTop="20dp"
-        android:src="@drawable/car" />
+        android:layout_alignParentStart="true"/>
 
 </RelativeLayout>

@@ -14,6 +14,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.project.Car;
 import com.example.project.DeletCar;
 import com.example.project.R;
@@ -81,8 +83,13 @@ import java.util.Locale;
 
             void setDetails(Car car){
 
-                int resourceId = carcontext.getResources().getIdentifier(car.getImageUrl(), "drawable", carcontext.getPackageName());
-                imageView.setImageResource(resourceId);
+//                int resourceId = carcontext.getResources().getIdentifier(car.getImageUrl(), "drawable", carcontext.getPackageName());
+//                imageView.setImageResource(resourceId);
+
+                Glide.with(carcontext)
+                        .load(car.getImageUrl()) // Assuming getImageUrl() returns the URL of the image
+                        .diskCacheStrategy(DiskCacheStrategy.ALL) // Cache both original & resized image
+                        .into(imageView);
 
                 txtMake.setText(car.getMake());
                 txtMode.setText(car.getModel());

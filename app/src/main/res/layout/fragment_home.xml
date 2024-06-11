@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FDFDFD"
+    android:backgroundTint="@color/Bblue"
     tools:context=".MainActivity">
 
     <!-- Title -->
@@ -31,7 +32,7 @@
 
         <!-- Search EditText -->
         <EditText
-            android:id="@+id/editTextSearch"
+            android:id="@+id/editTextSearchName"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:hint="Search now"
@@ -49,8 +50,8 @@
             android:id="@+id/imageViewSearch"
             android:layout_width="25dp"
             android:layout_height="20dp"
-            android:layout_alignBottom="@+id/editTextSearch"
-            android:layout_alignTop="@+id/editTextSearch"
+            android:layout_alignBottom="@+id/editTextSearchName"
+            android:layout_alignTop="@+id/editTextSearchName"
             android:layout_marginStart="12dp"
             android:src="@drawable/img_3"
             android:padding="4dp" />
@@ -60,7 +61,7 @@
             android:id="@+id/horizontalScrollViewButtons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/editTextSearch"
+            android:layout_below="@id/editTextSearchName"
             android:scrollbars="none">
 
             <LinearLayout
@@ -122,7 +123,7 @@
 
             <!-- Button: Reset -->
             <Button
-                android:id="@+id/buttonRight"
+                android:id="@+id/buttonReset"
                 android:layout_width="70dp"
                 android:layout_height="40dp"
                 android:text="Reset"
@@ -131,7 +132,7 @@
 
             <!-- Label -->
             <TextView
-                android:id="@+id/textViewRightLabel"
+                android:id="@+id/textnumberOfResults"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="# of Results"

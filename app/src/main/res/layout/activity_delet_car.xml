@@ -1,111 +1,216 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
-    tools:context=".DeletCar">
+    android:padding="16dp">
 
+    <!-- Title -->
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="32dp"
         android:text="Delete Car"
-        android:textSize="24sp"
+        android:textColor="#4B0082"
         android:textStyle="bold"
-        android:textColor="@color/black" />
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"/>
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginTop="16dp"
-        android:scaleType="centerCrop"
-        />
-
-    <LinearLayout
-        android:layout_width="match_parent"
+    <!-- Car Information -->
+    <TextView
+        android:id="@+id/textCarInfo"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="16dp">
+        android:text="Car Information:"
+        android:textColor="@android:color/black"
+        android:layout_below="@id/title"
+        android:layout_marginTop="16dp"/>
 
-        <TextView
-            android:id="@+id/txtMake"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Make: Toyota"
-            android:textColor="#282828"
-            android:textSize="18sp" />
+    <!-- Display Car Information Here -->
+    <TextView
+        android:id="@+id/carInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:layout_below="@id/textCarInfo"
+        android:layout_marginTop="8dp"/>
 
-        <TextView
-            android:id="@+id/txtModel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Model: Corolla"
-            android:textColor="#282828"
-            android:textSize="18sp" />
+    <!-- Confirmation Message -->
+    <TextView
+        android:id="@+id/textConfirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Are you sure you want to delete this car?"
+        android:textColor="@android:color/black"
+        android:layout_below="@id/carInfo"
+        android:layout_marginTop="16dp"/>
 
-        <TextView
-            android:id="@+id/txtrentalPricePerDay"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Rental Price per Day: $50"
-            android:textColor="#282828"
-            android:textSize="18sp" />
+    <!-- Buttons for Confirm and Cancel -->
+    <LinearLayout
+        android:layout_width="379dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textConfirm"
+        android:layout_marginTop="39dp"
+        android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/txttransmissionTypes"
-            android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/buttonConfirm"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Transmission: Automatic"
-            android:textColor="#282828"
-            android:textSize="18sp" />
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:text="Confirm"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/buttonCancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Cancel"
+            android:textColor="@android:color/white" />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_marginTop="32dp">
+        android:id="@+id/linearLayout"
+        android:layout_width="373dp"
+        android:layout_height="76dp"
+        android:layout_below="@id/textConfirm"
+        android:layout_marginTop="128dp"
+        android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/deletImageView"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="8dp"
-            android:src="@drawable/bin" />
-
-        <ImageView
-            android:id="@+id/updateImageView"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="55dp"
-            android:layout_marginEnd="8dp"
-            android:src="@drawable/pencil" />
-
-
-
-        <ImageView
-            android:id="@+id/viewImageView"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="55dp"
-            android:layout_marginEnd="8dp"
-            android:src="@drawable/right_arrow" />
-
+        <Button
+            android:id="@+id/btnConfirm"
+            android:layout_height="37dp"
+            android:layout_weight="1"
+            android:onClick="_btnConfirm"
+            android:text="Confirm" />
 
     </LinearLayout>
-</LinearLayout>
+
+    <TextView
+        android:id="@+id/textmsg"
+        android:layout_width="381dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="16dp"
+        android:text="TextView" />
+</RelativeLayout>
+
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:id="@+id/main"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:orientation="vertical"-->
+<!--    android:padding="16dp"-->
+<!--    tools:context=".DeletCar">-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textView"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:layout_marginTop="32dp"-->
+<!--        android:text="Delete Car"-->
+<!--        android:textSize="24sp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:textColor="@color/black" />-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="200dp"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        />-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical"-->
+<!--        android:layout_marginTop="16dp">-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/txtMake"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Make: Toyota"-->
+<!--            android:textColor="#282828"-->
+<!--            android:textSize="18sp" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/txtModel"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:text="Model: Corolla"-->
+<!--            android:textColor="#282828"-->
+<!--            android:textSize="18sp" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/txtrentalPricePerDay"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:text="Rental Price per Day: $50"-->
+<!--            android:textColor="#282828"-->
+<!--            android:textSize="18sp" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/txttransmissionTypes"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:text="Transmission: Automatic"-->
+<!--            android:textColor="#282828"-->
+<!--            android:textSize="18sp" />-->
+<!--    </LinearLayout>-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:gravity="center"-->
+<!--        android:layout_marginTop="32dp">-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/deletImageView"-->
+<!--            android:layout_width="40dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_marginStart="5dp"-->
+<!--            android:layout_marginEnd="8dp"-->
+<!--            android:src="@drawable/bin" />-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/updateImageView"-->
+<!--            android:layout_width="40dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_marginStart="55dp"-->
+<!--            android:layout_marginEnd="8dp"-->
+<!--            android:src="@drawable/pencil" />-->
+
+
+
+<!--        <ImageView-->
+<!--            android:id="@+id/viewImageView"-->
+<!--            android:layout_width="40dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_marginStart="55dp"-->
+<!--            android:layout_marginEnd="8dp"-->
+<!--            android:src="@drawable/right_arrow" />-->
+
+
+<!--    </LinearLayout>-->
+<!--</LinearLayout>-->
 
     <!--<?xml version="1.0" encoding="utf-8"?>-->
     <!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->

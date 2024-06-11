@@ -1,8 +1,17 @@
 package com.example.project;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
-import androidx.fragment.app.Fragment;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +19,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 import com.android.volley.Request;
@@ -30,7 +40,9 @@ public class ManageFragment extends Fragment {
 
     private EditText editType, editModelYear, editColor, editCarNumber, editPassengers, editRentalPrice, editMakeCompany, editDescription;
     private Spinner spinnerBenz, spinnerStatus;
-
+    private Button btnPick;
+    ImageView imageView;
+    ActivityResultLauncher<Intent> resultLauncher;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_manage, container, false);
@@ -46,10 +58,18 @@ public class ManageFragment extends Fragment {
         editRentalPrice = view.findViewById(R.id.editRentalPrice);
         editMakeCompany = view.findViewById(R.id.editMakeCompany);
         editDescription = view.findViewById(R.id.editDescription);
+        btnPick=view.findViewById(R.id.buttonSelectImage);
+        imageView=view.findViewById(R.id.imageViewSelected);
 
         fetchSpinnerData();
+        registerResult();
+        btnPick.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pickImage();
+            }
+        });        Button buttonSave = view.findViewById(R.id.buttonSave);
 
-        Button buttonSave = view.findViewById(R.id.buttonSave);
         buttonSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,6 +79,31 @@ public class ManageFragment extends Fragment {
 
         return view;
     }
+    private void pickImage (){
+        Intent intent = new Intent (MediaStore.ACTION_PICK_IMAGES);
+        resultLauncher.launch(intent);
+    }
+    private void registerResult() {
+        resultLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                new ActivityResultCallback<ActivityResult>() {
+                    @Override
+                    public void onActivityResult(ActivityResult result) {
+                        if (result.getResultCode() == FragmentActivity.RESULT_OK) {
+                            if (result.getData() != null) {
+                                Uri imageUrl = result.getData().getData();
+                                imageView.setImageURI(imageUrl);
+                                // Make the ImageView visible
+                                imageView.setVisibility(View.VISIBLE);
+                            }
+                        } else {
+                            Toast.makeText(getContext(), "No image selected", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }
+        );
+    }
+
 
     private void fetchSpinnerData() {
         // Retrieve the array for status and type of Benz from strings.xml

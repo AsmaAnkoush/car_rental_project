@@ -4,6 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="red">#F44336</color> <!-- Used for the delete button -->
     <color name="blue">#2196F3</color> <!-- Used for the update button -->
+    <color name="Bblue">#68B4F1</color> <!-- Used for the update button -->
     <color name="green">#4CAF50</color> <!-- Used for the view button -->
     <color name="gray">#FF888888</color> <!-- General gray color for text and backgrounds -->
     <color name="dark_gray">#FF444444</color> <!-- Darker gray for emphasis -->

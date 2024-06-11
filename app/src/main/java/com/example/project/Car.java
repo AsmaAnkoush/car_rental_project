@@ -9,14 +9,11 @@ public class Car {
     private String color;
     private String description;
     private double rentalPricePerDay;
-    private String availabilityStatus;
+    private String availabilityStatus;// Availability status (e.g., "Available", "Rented")
     private String imageUrl;
-
-
-
     // جير ظ اوتومات او كهرباء
-    private String transmissionTypes;
-    private String usingTypes;
+    private String transmissionTypes;// Transmission type (e.g., Automatic, Manual)
+    private String usingTypes;// Intended use type (e.g., Personal, Business, SUV)
     private int numOfPassengers;
 
     public Car() {}
