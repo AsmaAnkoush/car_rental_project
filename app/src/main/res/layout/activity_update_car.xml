@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="@color/Bblue"
+    android:background="@color/Bblue"
     tools:context=".ManageFragment">
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,7 +15,7 @@
         <TextView android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Update Car to System"
+            android:text="@string/update_car_to_system"
             android:textColor="#4B0082"
             android:textStyle="bold"
             style="@style/TextStyle.Title"
@@ -31,9 +33,8 @@
             android:id="@+id/uptextModel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Model :"
+            android:text="@string/model"
             style="@style/TextStyle.Label"
-            android:textColor="@android:color/black"
             android:layout_marginTop="16dp"/>
 
         <!--  Model Year  -->
@@ -44,7 +45,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/textModel"
             android:layout_marginTop="6dp"
-            android:hint="Enter Model : " />
+            android:hint="@string/enter_model"
+            />
 
         <TextView
             android:id="@+id/uptextModelYear"
@@ -52,55 +54,53 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/editType"
             style="@style/TextStyle.Label"
-            android:text="Model Year:"
-            android:textColor="@android:color/black" />
+            android:text="@string/model_year"
+             />
 
         <EditText
             android:id="@+id/editModelYear"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter Model Year"
+            android:hint="@string/enter_model_year"
 
-            android:layout_below="@id/textModelYear"
+            style="@style/TextStyle.edt"
             android:layout_marginTop="8dp"/>
         <!--  Color  -->
+
         <TextView
             android:id="@+id/uptextColor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Color:"
+            android:text="@string/color"
             style="@style/TextStyle.Label"
-            android:textColor="@android:color/black"
-            android:layout_below="@id/editModelYear"
             android:layout_marginTop="16dp"/>
         <EditText
             android:id="@+id/upeditColor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter Color"
-            android:layout_below="@id/textColor"
+            android:hint="@string/enter_color"
+            style="@style/TextStyle.edt"
             android:layout_marginTop="8dp"/>
         <TextView
             android:id="@+id/uptextType"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="using Type of New Car:"
+            android:text="@string/using_type_of_new_car"
             style="@style/TextStyle.Label"
-            android:layout_below="@id/title"
             android:layout_marginTop="16dp"/>
         <EditText
             android:id="@+id/upeditType"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter usong Type of New Car"
-
+            android:hint="@string/enter_usong_type_of_new_car"
+            style="@style/TextStyle.edt"
             android:layout_marginTop="8dp"/>
         <!--  Type of Benz  -->
         <TextView
             android:id="@+id/uptextBenz"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Type of Benz:"
+            android:text="@string/type_of_benz"
 
             style="@style/TextStyle.Label"
 
@@ -115,121 +115,113 @@
         <TextView android:id="@+id/uptextCarNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Car Number:"
+            android:text="@string/car_number"
             style="@style/TextStyle.Label"
-
             android:layout_marginTop="16dp"/>
+
         <EditText android:id="@+id/upeditCarNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter Car Number"
+            android:hint="@string/enter_car_number"
+            style="@style/TextStyle.edt"
             android:layout_marginTop="8dp"/>
         <!--  Number of Passengers  -->
         <TextView
             android:id="@+id/uptextPassengers"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Number of Passengers:"
-            android:layout_below="@id/editCarNumber"
+            android:text="@string/number_of_passengers"
             style="@style/TextStyle.Label"
             android:layout_marginTop="16dp"/>
+
         <EditText android:id="@+id/upeditPassengers"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter Number of Passengers"
-            android:layout_below="@id/textPassengers"
+            android:hint="@string/enter_number_of_passengers"
+            style="@style/TextStyle.edt"
             android:layout_marginTop="8dp"/>
         <!--  Rental Price per Day  -->
         <TextView
             android:id="@+id/uptextRentalPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Rental Price per Day:"
-            android:layout_below="@id/editPassengers"
+            android:text="@string/rental_price_per_day"
+           style="@style/TextStyle.Label"
             android:layout_marginTop="16dp"/>
         <EditText
             android:id="@+id/upeditRentalPrice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter Rental Price per Day"
-            android:layout_below="@id/textRentalPrice"
-            android:layout_marginTop="8dp"/>
+            android:hint="@string/enter_rental_price_per_day"
+            style="@style/TextStyle.edt"
+           />
         <!--  Make Company  -->
         <TextView
             android:id="@+id/uptextMakeCompany"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Make Company:"
-            android:textColor="@android:color/black"
-            android:layout_below="@id/editRentalPrice"
-            android:layout_marginTop="16dp"/>
+            android:text="@string/make_company"
+            style="@style/TextStyle.Label"
+            />
         <EditText
             android:id="@+id/upeditMakeCompany"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter Make Company"
-            android:layout_below="@id/textMakeCompany"
-            android:layout_marginTop="8dp"/>
+            android:hint="@string/enter_make_company"
+            style="@style/TextStyle.edt"
+           />
         <!--  Status  -->
         <TextView
             android:id="@+id/uptextStatus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Status:"
+            android:text="@string/status"
             style="@style/TextStyle.Label"
-            android:layout_below="@id/editMakeCompany"
-            android:layout_marginTop="16dp"/>
+          />
         <Spinner
             android:id="@+id/upspinnerStatus"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textStatus"
             android:layout_marginTop="8dp"/>
         <!--  Description  -->
         <TextView
             android:id="@+id/uptextDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Description:"
-            android:layout_below="@id/spinnerStatus"
-            android:layout_marginTop="16dp"/>
+            android:text="@string/description"
+            style="@style/TextStyle.Label"/>
         <EditText
             android:id="@+id/upeditDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter Description"
-            android:layout_below="@id/textDescription"
-            android:layout_marginTop="8dp"/>
+            android:hint="@string/enter_description"
+           style="@style/TextStyle.edt"/>
         <!--  Image  -->
         <TextView
             android:id="@+id/uptextImage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Image:"
-            style="@style/TextStyle.Label"
-            android:layout_below="@id/editDescription"
-            android:layout_marginTop="16dp"/>
+            android:text="@string/image"
+            style="@style/TextStyle.Label" />
         <Button
             android:id="@+id/upbuttonSelectImage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Select Image"
-            android:layout_below="@id/textImage"
+            android:text="@string/select_image"
             android:layout_marginTop="8dp"/>
         <EditText
             android:id="@+id/uptext_Image"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Image:"
+            android:text="@string/imagee"
             style="@style/TextStyle.Label"
-
-            android:layout_marginTop="16dp"/>
+            />
         <!--  Placeholder for the selected image  -->
         <ImageView
             android:id="@+id/upimageViewSelected"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:layout_below="@id/buttonSelectImage"
+
             android:layout_marginTop="8dp"
             android:visibility="gone"/>
         <!--  Buttons for Save and Cancel  -->

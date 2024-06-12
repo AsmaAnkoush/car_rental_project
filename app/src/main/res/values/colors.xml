@@ -3,13 +3,15 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="red">#F44336</color> <!-- Used for the delete button -->
-    <color name="blue">#2196F3</color> <!-- Used for the update button -->
-    <color name="Bblue">#68B4F1</color> <!-- Used for the update button -->
+    <color name="blue">#9C27B0</color> <!-- Used for the update button -->
+    <color name="Bblue">#DB6FED</color> <!-- Used for the update button -->
     <color name="green">#4CAF50</color> <!-- Used for the view button -->
     <color name="gray">#FF888888</color> <!-- General gray color for text and backgrounds -->
     <color name="dark_gray">#FF444444</color> <!-- Darker gray for emphasis -->
     <color name="primary">#3F51B5</color> <!-- Primary color for your app theme -->
     <color name="primary_dark">#303F9F</color> <!-- Darker shade of the primary color -->
     <color name="accent">#FF4081</color> <!-- Accent color for highlights -->
+<!--    android:textColor="#4B0082"-->
+    <color name="Titel">#4B0082</color>
 
 </resources>

@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
+
     tools:context=".AccountFragment">
 
     <ScrollView
@@ -27,13 +28,13 @@
 
 
             <!-- Manager Name Label -->
-
+<!--            android:background="#8B450082"-->
             <View
                 android:id="@+id/topPurpleShape"
                 android:layout_width="403dp"
                 android:layout_height="137dp"
                 android:layout_marginTop="4dp"
-                android:background="#8B450082"
+                android:background="@color/Bblue"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
